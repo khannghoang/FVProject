@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <title>FVProject Login Page</title>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Please Login</legend>
+            
+            <!-- Hiển thị thông báo lỗi đăng nhập -->
+            <div th:if="${param.error != null}">
+                <p>Failed to login.</p>
+                <div th:if="${SPRING_SECURITY_LAST_EXCEPTION != null}">
+                    <p>Reason: <span th:text="${SPRING_SECURITY_LAST_EXCEPTION.message}"></span></p>
+                </div>
+            </div>
+            
+            <!-- Hiển thị thông báo khi đăng xuất -->
+            <div th:if="${param.logout != null}">
+                <p>You have been logged out.</p>
+            </div>
+            
+            <p>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" />
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" />
+            </p>
+            <div>
+                <button type="submit" class="btn">Log in</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
