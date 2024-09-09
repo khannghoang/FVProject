@@ -15,8 +15,8 @@ public class WebSecurityConfiguration {
     UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
         manager.createUser(
-            User.withUsername("trevor@craftycodr.com")
-                .password("{noop}asdfasdf") // "{noop}" để chỉ định không mã hóa mật khẩu, hoặc sử dụng mã hóa nếu cần.
+            User.withUsername("khanghoang")
+                .password("{noop}14102003") // "{noop}" để chỉ định không mã hóa mật khẩu, hoặc sử dụng mã hóa nếu cần.
                 .roles("USER")
                 .build()
         );
